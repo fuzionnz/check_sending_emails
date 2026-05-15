@@ -19,7 +19,7 @@ CHECK_FAIL=1
 class DKIMChecker:
     def __init__(self):
         self.signing_domains = dict()
-        line_matcher = re.compile('(?P<domain>\S+)\s+(?P<record>\S+)')   
+        line_matcher = re.compile(r'(?P<domain>\S+)\s+(?P<record>\S+)')
         with open('/etc/opendkim/SigningTable', 'r') as f:
             for line in f:
                 match = line_matcher.match(line.strip())
